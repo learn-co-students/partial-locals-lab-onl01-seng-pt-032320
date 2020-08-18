@@ -4,8 +4,13 @@
 <%= submit_tag ("Search") %>
 <% end %>
 
+<br />
+
 <% if @students %>
+    <% if @students=="No Matches Found" %>
+    <%= @students %>
+    <% else %>
     <% @students.each do |student| %>
     <%= render partial: "students/student", locals: {student: student} %>
-    <% end %>
+    <% end %><% end %>
 <% end %>
